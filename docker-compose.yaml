@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  database:
+    container_name: pitchhunt-database
+    image: 'postgres:latest'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: pitchhunt
+      POSTGRES_PASSWORD: pitchhunt
+      POSTGRES_DB: pitchhunt
+    volumes:
+      - ./var/db/:/var/lib/postgresql/data/
